@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 var fs = require('fs');
-const {parse} = require('csv-parse/sync');
+const { parse } = require('csv-parse/sync');
+const { exit } = require('process');
 
 
-const INPUT_FILE_NAME='INPUT_FILE.csv'; //XXX put you file name here
+const INPUT_FILE_NAME='input_file.csv'; //XXX put you file name here
 const OUTPUT_FILE_NAME='output.txt'; //XXX put you file name here
 const STATE_FILE_NAME='state.txt';
 
@@ -101,14 +102,14 @@ function match(ia, ib)
 
 /* STEP 1 - Reading participants file */
 LOG('Reading file contents');
-var file_contents = fs.readFileSync(INPUT_FILE_NAME, 'utf8');
+var file_contents = fs.readFileSync(INPUT_FILE_NAME, 'utf8').trimStart();
 var participants = parse(file_contents, {columns: true});
 LOG('Input file:');
 LOG(participants);
 //Input validation
 //TODO
 if (participants.some(p => !has_mandatory_properties(p))){
-    return;
+    process.exit(1);
 }
   //check "Name" column 
   //check "dating males" column

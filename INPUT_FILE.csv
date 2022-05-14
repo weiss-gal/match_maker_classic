@@ -1,3 +1,7 @@
-Name,dating males,dating females,Gender,Weight,MaxMatches
-alpha,,,M,1,1
-beta,,,F,1,1
+﻿Name,Weight,MaxMatches,Gender,dating males,dating females,Alpha,Sierra,Yankee,Zulu,Tango,Bravo
+Alpha,1,2,M,block,,,,,,,
+Sierra,1,1,M,block,,,,,,,block
+Yankee,1,1,M,block,,,,,block,,
+Zulu,1,2,F,,block,block,,,,,
+Tango,1,2,F,,block,,,,,,
+Bravo,1,1,F,,block,,,,,,
